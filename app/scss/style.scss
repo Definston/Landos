@@ -1,4 +1,361 @@
-@import 'vars';
-@import 'global';
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap');
+@import "vars";
+@import "global";
+@import "fonts";
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap");
 
+.header {
+    width: 100%;
+    height: 111px;
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+    position: absolute;
+    top: 0;
+    z-index: 5;
+    &__inner {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        font-family: "GothamPro";
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        color: $bold;
+    }
+    &-logo {
+        display: block;
+        width: 200px;
+        height: 111px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    &-button {
+        width: 200px;
+        height: 50px;
+    }
+    &-menu {
+        ul {
+            display: flex;
+            justify-content: space-between;
+            width: 571px;
+            li {
+                position: relative;
+            }
+            a::after {
+                content: "";
+                position: absolute;
+                display: block;
+                height: 3px;
+                background-color: $green;
+
+                width: 0px;
+                top: 21px;
+                border-radius: 1000px;
+                transition: all 0.2s;
+            }
+            li:hover {
+                a::after {
+                    width: 100%;
+                }
+            }
+        }
+    }
+}
+
+.start {
+    height: 600px;
+    width: 100%;
+    position: relative;
+    margin-top: 111px;
+    &__inner {
+        height: 100%;
+        width: 100%;
+    }
+    &-domik {
+        position: absolute;
+        right: -2px;
+        top: -1px;
+        display: block;
+        height: 600px;
+        width: 890px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        border: 1px solid #fff;
+        padding: 1px;
+    }
+    &-domik-fon {
+        position: absolute;
+        right: 0;
+        top: 0;
+        display: block;
+        height: 600px;
+        width: 890px;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+        background: linear-gradient(0deg, #ffffff 0%, rgba(255, 255, 255, 0) 34.5%),
+            linear-gradient(270deg, #ffffff 11.9%, rgba(255, 255, 255, 0) 100%);
+    }
+    &-info {
+        position: absolute;
+        z-index: 2;
+    }
+    &-info-title {
+        height: 116px;
+        width: 560px;
+        margin-top: 100px;
+
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 58px;
+        /* or 58px */
+
+        /* Синий */
+
+        color: $blue;
+    }
+    &-info-text {
+        width: 635px;
+        height: 66px;
+        margin-top: 30px;
+
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+    }
+    &-item-block {
+        height: 190px;
+        width: 600px;
+        margin-top: 20px;
+        display: flex;
+        justify-content: space-between;
+    }
+    &-info-items {
+        height: 190px;
+        width: 285px;
+    }
+    &-item {
+        background-color: $light;
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        height: 80px;
+        width: 285px;
+        margin-top: 30px;
+        padding: 0 25px;
+        display: flex;
+        align-items: center;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        /* or 22px */
+
+        color: #ffffff;
+    }
+    &-item-text {
+        height: 44px;
+        width: 175px;
+    }
+    &-item-img {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 60px;
+        width: 60px;
+        position: relative;
+        filter: drop-shadow(0px 4px 5px rgba(0, 0, 0, 0.15));
+        margin-right: 5px;
+    }
+}
+.rectangle {
+    position: absolute;
+    width: 500px;
+    height: 500px;
+    left: -431px;
+    top: 0px;
+
+    border: 20px solid $light;
+    opacity: 0.3;
+    filter: blur(20px);
+    transform: rotate(46.47deg);
+}
+
+//===================info===============
+.info {
+    margin-top: 112px;
+    height: 704px;
+    width: 100%;
+    &-title {
+        width: 721px;
+        height: 58px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 58px;
+        /* identical to box height, or 58px */
+
+        /* Синий */
+
+        color: $blue;
+        margin-bottom: 80px;
+    }
+    &-content {
+        height: 352px;
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 102px;
+    }
+    &-text {
+        width: 700px;
+        height: 330px;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        /* or 22px */
+        span {
+            font-weight: bold;
+        }
+    }
+    &-domik {
+        width: 360px;
+        height: 352px;
+        border-radius: 10px;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    &-items {
+        height: 134px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &-item {
+        width: 300px;
+        height: 134px;
+
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 120%;
+        /* or 22px */
+
+        /* Темно-синий */
+        color: $blue;
+        span {
+            font-style: normal;
+            font-weight: 900;
+            font-size: 74px;
+            line-height: 110%;
+            /* or 81px */
+
+            /* Голубой */
+
+            color: $light;
+            position: relative;
+            border-bottom: 2px solid $light;
+        }
+        span::before {
+            content: "";
+            position: absolute;
+            bottom: -6px;
+            left: 0;
+            background-color: $light;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+        }
+        p {
+            margin-top: 10px;
+        }
+    }
+}
+
+//=============================zayavka=============
+.consult {
+    height: 250px;
+    margin-top: 160px;
+    &__inner {
+        background-color: $bold;
+        background: linear-gradient(90deg, #0096d7 0%, #0f3ca0 100%);
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+        border-radius: 5px;
+        color: #fff;
+        padding-top: 57px;
+        padding-left: 60px;
+        position: relative;
+        height: 250px;
+    }
+    &-title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 20px;
+        line-height: 24px;
+        /* identical to box height, or 24px */
+        margin-bottom: 10px;
+    }
+    &-text {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 18px;
+        line-height: 22px;
+        /* identical to box height, or 22px */
+        margin-bottom: 30px;
+    }
+    form {
+        width: 790px;
+        height: 50px;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 10px;
+    }
+    input {
+        width: 250px;
+        height: 50px;
+        border-radius: 5px;
+        padding-left: 20px;
+    }
+    input::placeholder {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        /* or 19px */
+
+        /* Темно-синий */
+
+        color: $bold;
+        opacity: 0.4;
+    }
+    input:focus {
+        outline: none;
+    }
+    button {
+        width: 250px;
+        height: 50px;
+    }
+    &-text-bot {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 11px;
+        line-height: 16px;
+        /* identical to box height, or 16px */
+
+        color: #ffffff;
+    }
+    img {
+        position: absolute;
+        width: 420px;
+        height: 420px;
+        top: -75px;
+        right: -65px;
+    }
+}
