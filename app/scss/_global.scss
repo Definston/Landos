@@ -9,6 +9,8 @@ html {
 a {
     display: inline-block;
     text-decoration: none;
+    color: #ffffff;
+    border-bottom: 1px solid #ffffff;
 }
 ul,
 li {
@@ -41,6 +43,7 @@ p {
     margin: 0;
 }
 body {
+    margin: 0 auto;
     font-family: "GothamPro", sans-serif;
     font-weight: 400;
     font-size: 15px;

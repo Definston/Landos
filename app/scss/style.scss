@@ -44,6 +44,9 @@
             li {
                 position: relative;
             }
+            a {
+                color:$bold;
+            }
             a::after {
                 content: "";
                 position: absolute;
@@ -76,7 +79,7 @@
     }
     &-domik {
         position: absolute;
-        right: -2px;
+        right: 0px;
         top: -1px;
         display: block;
         height: 600px;
@@ -357,5 +360,524 @@
         height: 420px;
         top: -75px;
         right: -65px;
+    }
+}
+
+//========================slider=====================
+.slider {
+    margin-top: 150px;
+    height: 423px;
+    width: 100%;
+    &-title {
+        height: 58px;
+        width: 600px;
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 24px;
+        /* identical to box height, or 24px */
+        margin-bottom: 80px;
+    }
+    &-img {
+        width: 200px;
+        height: 285px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+    img {
+        position: relative;
+        width: 200px;
+        height: 285px;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        transition: all 0.5s;
+        filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.15));
+        border-radius: 5px;
+    }
+    &-item {
+        width: 200px;
+        position: relative;
+        .lupa {
+            transition: all 0.5s;
+            display: none;
+            position: absolute;
+            background-image: url(/images/icons/lupa.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            top: 43%;
+            left: 37%;
+            width: 25px;
+            height: 25px;
+        }
+    }
+    &-item:hover {
+        img {
+            filter: brightness(50%);
+        }
+        .lupa {
+            display: block;
+        }
+    }
+    &-items {
+        width: 970px;
+    }
+    &__inner {
+        position: relative;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.slick-list.draggable {
+    width: 950px;
+    height: 306px;
+}
+
+.slick-slide.slick-active {
+    img {
+        box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.15);
+    }
+}
+.slick-arrow.slick {
+    &-prev {
+        width: 50px;
+        height: 50px;
+        position: absolute;
+        top: 40%;
+        transform: translate(-150%, 0);
+        box-shadow: none;
+        cursor: pointer;
+        color: transparent;
+        border: none;
+        outline: none;
+        background: transparent;
+    }
+    &-prev::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 40px;
+        top: 0;
+        left: 10px;
+        background-image: url(/images/icons/l-arrow.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 5px;
+    }
+    &-next {
+        width: 50px;
+        height: 50px;
+        background-image: url(/images/icons/l-arrow.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        position: absolute;
+        top: 40%;
+        right: 0;
+        transform: translate(50%, 0);
+        box-shadow: none;
+        cursor: pointer;
+        color: transparent;
+        border: none;
+        outline: none;
+        background: transparent;
+    }
+    &-next::before {
+        content: "";
+        position: absolute;
+        width: 20px;
+        height: 40px;
+        top: 0;
+        left: 10px;
+        background-image: url(/images/icons/r-arrow.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+        border-radius: 5px;
+    }
+}
+
+//========================rab================
+.rab {
+    height: 1000px;
+    margin-top: 150px;
+    &-title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 58px;
+        /* identical to box height, or 58px */
+
+        /* Синий */
+
+        color: $blue;
+        width: 584px;
+        height: 58px;
+        margin-bottom: 80px;
+    }
+    &-items {
+        display: flex;
+    }
+    &-block + .rab-block {
+        margin-left: 40px;
+    }
+    &-item {
+        position: relative;
+        height: 260px;
+        width: 360px;
+
+        filter: drop-shadow(0px 0px 20px rgba(15, 60, 160, 0.15));
+        border-radius: 10px;
+        img {
+            border-radius: 10px;
+            height: 260px;
+            width: 360px;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+        }
+    }
+    &-item + .rab-item {
+        margin-top: 40px;
+    }
+    &-text {
+        span {
+            font-style: normal;
+            font-weight: bold;
+            font-size: 20px;
+            line-height: 24px;
+        }
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        /* or 19px */
+
+        color: #ffffff;
+
+        position: absolute;
+        bottom: 20px;
+        left: 24px;
+        border-radius: 10px;
+        z-index: 1;
+        opacity: 0;
+        transition: all 0.5s;
+    }
+    &-hover {
+        position: absolute;
+        background: linear-gradient(180deg, rgba(15, 60, 160, 0) 100%, #0f3ca0 100%); //36.92%
+        height: 260px;
+        width: 360px;
+        left: 0px;
+        top: 0px;
+        transition: all 0.5s;
+        border-radius: 10px;
+    }
+    &-item:hover {
+        .rab-text {
+            opacity: 1;
+        }
+        .rab-hover {
+            background: linear-gradient(180deg, rgba(15, 60, 160, 0) 36.92%, #0f3ca0 100%); //36.92%
+        }
+    }
+}
+//====================form-popup=============
+
+.form-popup {
+    margin-top: 217px;
+    position: relative;
+    button {
+        width: 240px;
+        height: 50px;
+        margin-bottom: 10px;
+        position: relative;
+    }
+    button::after {
+        content: "";
+        position: absolute;
+        top: -9px;
+        right: -120px;
+        width: 78.25px;
+        height: 38px;
+        background-image: url(/images/icons/strelka.svg);
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+    img {
+        position: absolute;
+        top: -85px;
+        right: -1px;
+        width: 500px;
+        height: 335px;
+        border-radius: 0px 0px 0px 5px;
+        transform: matrix(-1, 0, 0, 1, 0, 0);
+    }
+}
+
+.white-popup {
+    position: relative;
+    background: #fff;
+    padding: 20px;
+    width: auto;
+    max-width: 676px;
+    margin: 20px auto;
+}
+
+.popup {
+    width: 676px;
+    height: 1138px;
+    font-style: normal;
+    font-weight: bold;
+    font-size: 20px;
+    line-height: 24px;
+    /* identical to box height, or 24px */
+
+    /* Темно-синий */
+
+    color: #0a2053;
+    &-container {
+        width: 586px;
+        padding: 0 5px;
+        margin: 0 auto;
+        transform: translate(-5%, 35px);
+    }
+    input {
+        height: 50px;
+        width: 100%;
+        padding-left: 20px;
+    }
+    input::placeholder {
+        font-style: normal;
+        font-weight: 300;
+        font-size: 16px;
+        line-height: 19px;
+        /* or 19px */
+
+        /* Темно-синий */
+
+        color: #0a2053;
+    }
+}
+.p {
+    &-ocenka {
+        position: relative;
+        margin-bottom: 30px;
+        input[type="radio"] {
+            width: 10px;
+            height: 10px;
+            position: absolute;
+            margin-top: 9px;
+            left: 11px;
+            opacity: 0.000001;
+            z-index: 11;
+        }
+        label::before {
+            content: "";
+            display: inline-block;
+            position: absolute;
+            left: 10px;
+            margin-top: 9px;
+            border-radius: 50%;
+            border: 1px solid #0096d7;
+            width: 11px;
+            height: 11px;
+        }
+        label {
+            font-style: normal;
+            font-weight: 300;
+            font-size: 16px;
+            line-height: 19px;
+            margin-left: 28px;
+            /* or 19px */
+
+            /* Темно-синий */
+
+            color: #0a2053;
+        }
+        input[type="radio"]:checked + label:before {
+            content: "\2022";
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            font-size: 28px;
+            line-height: 8px;
+            color: #0096d7;
+            
+        }
+    }
+    &-pass {
+        display: flex;
+        justify-content: space-between;
+    }
+    &-contact {
+        display: flex;
+        justify-content: space-between;
+    }
+    &-item {
+        margin-bottom: 30px;
+    }
+    &-itog {
+        margin-top: 30px;
+        margin-bottom: 10px;
+    }
+
+    &-button {
+        display: flex;
+        justify-content: space-between;
+        .consult-text-bot {
+            width: 244px;
+            height: 48px;
+            font-style: normal;
+            font-weight: 300;
+            font-size: 11px;
+            line-height: 16px;
+            /* or 16px */
+
+            color: #000000;
+            a {
+                color: $light;
+                border-bottom: 1px solid $light;
+            }
+        }
+        button {
+            width: 268px;
+            height: 50px;
+        }
+    }
+}
+
+//=================review==============sorry ya dolbayeb
+
+.review {
+    margin-top: 160px;
+    height: 368px;
+    margin-bottom: 155px;
+    &-title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 58px;
+        color: #0f3ca0;
+        width: 660px;
+        height: 58px;
+        margin-bottom: 80px;
+    }
+    &-items {
+        display: flex;
+        justify-content: space-between;
+    }
+    &-item {
+        position: relative;
+        width: 180px;
+        height: 230px;
+        .lupa {
+            transition: all 0.5s;
+            display: none;
+            position: absolute;
+            background-image: url(/images/icons/lupa.svg);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            top: 46%;
+            left: 42%;
+            width: 25px;
+            height: 25px;
+        }
+        img {
+            width: 180px;
+            height: 230px;
+            filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.15));
+            border-radius: 10px;
+            transition: all 0.5s;
+        }
+    }
+    &-item:hover {
+        .lupa {
+            display: block;
+        }
+        img {
+            filter: brightness(50%);
+        }
+    }
+}
+
+//=================footer==============
+.footer {
+    height: 561px;
+    margin-bottom: 45px;
+    &-title {
+        font-style: normal;
+        font-weight: bold;
+        font-size: 48px;
+        line-height: 58px;
+        color: #0f3ca0;
+        width: 660px;
+        height: 58px;
+        margin-bottom: 80px;
+    }
+    &-box {
+        height: 324px;
+        margin-bottom: 51px;
+    }
+    .contact-text {
+        position: absolute;
+        z-index: 1;
+        width: 566px;
+        height: 324px;
+
+        background: linear-gradient(90deg, #0096d7 0%, #0f3ca0 100%);
+        opacity: 0.9;
+        border-radius: 5px;
+        padding: 30px;
+        padding-right: 25px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 22px;
+        color: #fff;
+        /* or 22px */
+        span {
+            font-weight: bold;
+        }
+    }
+    &-bot {
+        display: flex;
+        justify-content: space-between;
+    }
+    &-text {
+        width: 191px;
+        height: 50px;
+        font-style: normal;
+        font-weight: normal;
+        font-size: 20px;
+        line-height: 120%;
+        /* or 24px */
+
+        /* Темно-синий */
+
+        color: #0a2053;
+    }
+    &-links {
+        display: flex;
+        justify-content: space-between;
+        width: 405px;
+    }
+    &-link {
+        width: 41px;
+        height: 41px;
+        a {
+            width: 40px;
+            height: 40px;
+        }
+    }
+    button {
+        width: 344px;
+        height: 50px;
     }
 }
